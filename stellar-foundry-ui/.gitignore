@@ -1,0 +1,41 @@
+# Godot editor generated data
+.godot/
+*.tmp
+*.translation
+
+# Godot import cache
+*.import
+
+# Exported builds
+build/
+exports/
+
+# Android and mobile build output
+android/
+ios/
+export_presets.cfg~
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.app
+
+# IDE / OS temp files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# IDE folders
+.vscode/
+.idea/
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Local settings / user data
+*.user
+user://
