@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/Panels/BuildingPanel.gd" id="1_b"]
+
+[node name="BuildingPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+layout_mode = 2
+custom_minimum_size = Vector2(900, 500)
+
+[node name="Content" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Center/Panel/Content/Header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 0.623, 0.263, 1)
+text = "🏗  建筑放置"
+size_flags_vertical = 4
+
+[node name="Expand" type="Control" parent="Center/Panel/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseBtn" type="Button" parent="Center/Panel/Content/Header"]
+layout_mode = 2
+custom_minimum_size = Vector2(36, 36)
+text = "✕"
+
+[node name="CategoryBar" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TabMining" type="Button" parent="Center/Panel/Content/CategoryBar"]
+layout_mode = 2
+text = "⛏ 采矿"
+
+[node name="TabProcessing" type="Button" parent="Center/Panel/Content/CategoryBar"]
+layout_mode = 2
+text = "🔥 加工"
+
+[node name="TabLogistics" type="Button" parent="Center/Panel/Content/CategoryBar"]
+layout_mode = 2
+text = "🚚 物流"
+
+[node name="TabStorage" type="Button" parent="Center/Panel/Content/CategoryBar"]
+layout_mode = 2
+text = "📦 存储"
+
+[node name="TabInfra" type="Button" parent="Center/Panel/Content/CategoryBar"]
+layout_mode = 2
+text = "🔌 基建"
+
+[node name="TabTrade" type="Button" parent="Center/Panel/Content/CategoryBar"]
+layout_mode = 2
+text = "💰 交易"
+
+[node name="BuildingsScroll" type="ScrollContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="BuildingsList" type="VBoxContainer" parent="Center/Panel/Content/BuildingsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="Footer" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Hint" type="Label" parent="Center/Panel/Content/Footer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.545, 0.58, 0.62, 1)
+text = "💡 点击建筑选中后，在主视口拖拽放置。Esc 关闭面板。"
+size_flags_vertical = 4

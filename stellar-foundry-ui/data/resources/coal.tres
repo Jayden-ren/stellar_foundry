@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MineralData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/Resources/MineralData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "coal"
+display_name = "煤炭"
+color = Color(0.28, 0.25, 0.25, 1)
+spawn_count = 24
+price = 3
+mine_interval = 5.0
+yield_per_tick = 1.0
+smelt_output = ""
+smelt_interval = 3.0

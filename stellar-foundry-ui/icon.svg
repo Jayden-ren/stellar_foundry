@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Outer dyson sphere shell -->
+  <circle cx="64" cy="64" r="54" fill="none" stroke="#4ecdc4" stroke-width="2" opacity="0.55"/>
+  <circle cx="64" cy="64" r="46" fill="none" stroke="#4ecdc4" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+  <!-- Star core -->
+  <circle cx="64" cy="64" r="28" fill="#ff9f43"/>
+  <circle cx="64" cy="64" r="20" fill="#ffd166"/>
+  <!-- Inner grid hint -->
+  <line x1="64" y1="30" x2="64" y2="98" stroke="#0e1116" stroke-width="1" opacity="0.35"/>
+  <line x1="30" y1="64" x2="98" y2="64" stroke="#0e1116" stroke-width="1" opacity="0.35"/>
+  <!-- Corner pixel accents -->
+  <rect x="8" y="8" width="8" height="8" fill="#a78bfa"/>
+  <rect x="112" y="8" width="8" height="8" fill="#a78bfa"/>
+  <rect x="8" y="112" width="8" height="8" fill="#a78bfa"/>
+  <rect x="112" y="112" width="8" height="8" fill="#a78bfa"/>
+</svg>

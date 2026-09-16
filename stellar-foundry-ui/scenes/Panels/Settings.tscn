@@ -1,0 +1,155 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/Panels/Settings.gd" id="1_s"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+layout_mode = 2
+custom_minimum_size = Vector2(640, 480)
+
+[node name="Content" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Center/Panel/Content/Header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 0.623, 0.263, 1)
+text = "⚙  设置"
+size_flags_vertical = 4
+
+[node name="Expand" type="Control" parent="Center/Panel/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseBtn" type="Button" parent="Center/Panel/Content/Header"]
+layout_mode = 2
+custom_minimum_size = Vector2(36, 36)
+text = "✕"
+
+[node name="Section" type="Label" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.306, 0.804, 0.769, 1)
+text = "◈ 视频"
+
+[node name="FullscreenRow" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FullscreenLabel" type="Label" parent="Center/Panel/Content/FullscreenRow"]
+layout_mode = 2
+text = "全屏模式"
+size_flags_horizontal = 3
+
+[node name="FullscreenToggle" type="CheckButton" parent="Center/Panel/Content/FullscreenRow"]
+layout_mode = 2
+
+[node name="AudioSection" type="Label" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.306, 0.804, 0.769, 1)
+text = "◈ 音频"
+
+[node name="MusicRow" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MusicLabel" type="Label" parent="Center/Panel/Content/MusicRow"]
+layout_mode = 2
+text = "音乐音量"
+custom_minimum_size = Vector2(100, 0)
+
+[node name="MusicSlider" type="HSlider" parent="Center/Panel/Content/MusicRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 70.0
+
+[node name="MusicValue" type="Label" parent="Center/Panel/Content/MusicRow"]
+layout_mode = 2
+text = "70%"
+
+[node name="SFXRow" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SFXLabel" type="Label" parent="Center/Panel/Content/SFXRow"]
+layout_mode = 2
+text = "音效音量"
+custom_minimum_size = Vector2(100, 0)
+
+[node name="SFXSlider" type="HSlider" parent="Center/Panel/Content/SFXRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 80.0
+
+[node name="SFXValue" type="Label" parent="Center/Panel/Content/SFXRow"]
+layout_mode = 2
+text = "80%"
+
+[node name="GameSection" type="Label" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.306, 0.804, 0.769, 1)
+text = "◈ 游戏"
+
+[node name="FontRow" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FontLabel" type="Label" parent="Center/Panel/Content/FontRow"]
+layout_mode = 2
+text = "字体大小"
+custom_minimum_size = Vector2(100, 0)
+
+[node name="FontSlider" type="HSlider" parent="Center/Panel/Content/FontRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 10.0
+max_value = 30.0
+value = 16.0
+
+[node name="FontValue" type="Label" parent="Center/Panel/Content/FontRow"]
+layout_mode = 2
+text = "16px"
+
+[node name="Footer" type="HBoxContainer" parent="Center/Panel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SaveBtn" type="Button" parent="Center/Panel/Content/Footer"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 36)
+text = "💾 保存设置"
+
+[node name="BackToMenu" type="Button" parent="Center/Panel/Content/Footer"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 36)
+text = "🏠 返回菜单"

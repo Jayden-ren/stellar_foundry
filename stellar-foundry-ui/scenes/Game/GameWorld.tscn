@@ -1,0 +1,138 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/Game/GameWorld.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/Game/OreChunk.tscn" id="2_chunk"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_script")
+ore_chunk_scene = ExtResource("2_chunk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(768, 576)
+zoom = Vector2(1, 1)
+limit_left = 0
+limit_top = 0
+limit_right = 1536
+limit_bottom = 1152
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="InfoLabel" type="Label" parent="HUD"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 900.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
+theme_override_font_sizes/font_size = 14
+text = "初始化世界..."
+
+[node name="PanelBox" type="PanelContainer" parent="HUD"]
+offset_left = 12.0
+offset_top = 40.0
+offset_right = 260.0
+offset_bottom = 360.0
+theme_override_styles/panel = null
+
+[node name="VBox" type="VBoxContainer" parent="HUD/PanelBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HelpTitle" type="Label" parent="HUD/PanelBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933, 0.835, 0.18, 1)
+theme_override_font_sizes/font_size = 14
+text = "操作说明"
+
+[node name="HelpLines" type="Label" parent="HUD/PanelBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "WASD/方向键 平移\n鼠标左键 放置建筑\n数字键1-5 切换\nESC 返回/关闭\n\n■ 核心循环\n 采矿→熔炉→交易"
+
+[node name="LegendTitle" type="Label" parent="HUD/PanelBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.306, 0.804, 0.769, 1)
+theme_override_font_sizes/font_size = 14
+text = "资源图例"
+
+[node name="LegendList" type="VBoxContainer" parent="HUD/PanelBox/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BackBtn" type="Button" parent="HUD"]
+offset_left = 12.0
+offset_top = 600.0
+offset_right = 180.0
+offset_bottom = 630.0
+text = "← 返回主菜单"
+
+[node name="BuildingTypeLabel" type="Label" parent="HUD"]
+offset_left = 200.0
+offset_top = 605.0
+offset_right = 700.0
+offset_bottom = 630.0
+theme_override_colors/font_color = Color(0.933, 0.835, 0.18, 1)
+theme_override_font_sizes/font_size = 13
+text = "当前建筑: 采矿钻 (1)"
+
+[node name="NavBar" type="PanelContainer" parent="HUD"]
+offset_left = 0.0
+offset_top = 660.0
+offset_right = 1536.0
+offset_bottom = 720.0
+
+[node name="NavBarHBox" type="HBoxContainer" parent="HUD/NavBar"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="NavPower" type="Button" parent="HUD/NavBar/NavBarHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(140, 44)
+text = "⚡ 电力"
+tooltip_text = "电力相关建筑"
+
+[node name="NavMining" type="Button" parent="HUD/NavBar/NavBarHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(140, 44)
+text = "⛏ 采矿"
+tooltip_text = "采矿相关建筑"
+
+[node name="NavTransport" type="Button" parent="HUD/NavBar/NavBarHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(140, 44)
+text = "🔀 运输"
+tooltip_text = "运输相关建筑"
+
+[node name="NavStorage" type="Button" parent="HUD/NavBar/NavBarHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(140, 44)
+text = "📦 存储"
+tooltip_text = "存储相关建筑"
+
+[node name="NavResearch" type="Button" parent="HUD/NavBar/NavBarHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(140, 44)
+text = "🔬 科研"
+tooltip_text = "打开科技树"
+
+[node name="SubMenu" type="PanelContainer" parent="HUD"]
+visible = false
+offset_left = 320.0
+offset_top = 580.0
+offset_right = 1500.0
+offset_bottom = 655.0
+
+[node name="SubMenuHBox" type="HBoxContainer" parent="HUD/SubMenu"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="SubMenuLabel" type="Label" parent="HUD/SubMenu/SubMenuHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 13
+text = "点击下方按钮选择建筑..."

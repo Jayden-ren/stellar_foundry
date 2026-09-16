@@ -1,0 +1,256 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/Game/GameHUD.gd" id="1_hud"]
+
+[node name="GameHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hud")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.055, 0.067, 0.086, 1)
+
+[node name="Layout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="TopBar" type="PanelContainer" parent="Layout"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 48)
+size_flags_horizontal = 3
+
+[node name="TopHBox" type="HBoxContainer" parent="Layout/TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StageInfo" type="HBoxContainer" parent="Layout/TopBar/TopHBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="StageLabel" type="Label" parent="Layout/TopBar/TopHBox/StageInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(1, 0.623, 0.263, 1)
+text = "🏆 阶段 Ⅰ · 星球工业"
+
+[node name="MoneyLabel" type="Label" parent="Layout/TopBar/TopHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.933, 0.835, 0.18, 1)
+text = "💰 $1,000"
+
+[node name="PowerLabel" type="Label" parent="Layout/TopBar/TopHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+text = "⚡ 100 W"
+
+[node name="ScienceLabel" type="Label" parent="Layout/TopBar/TopHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.65, 0.55, 1, 1)
+text = "🔬 0 SP"
+
+[node name="TimeLabel" type="Label" parent="Layout/TopBar/TopHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.545, 0.58, 0.62, 1)
+text = "⏱ 00:00:00"
+
+[node name="Expand" type="Control" parent="Layout/TopBar/TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DysonBox" type="VBoxContainer" parent="Layout/TopBar/TopHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(220, 0)
+theme_override_constants/separation = 2
+
+[node name="DysonTitle" type="Label" parent="Layout/TopBar/TopHBox/DysonBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.306, 0.804, 0.769, 1)
+text = "🌌 戴森球完工度"
+horizontal_alignment = 1
+
+[node name="DysonBar" type="ProgressBar" parent="Layout/TopBar/TopHBox/DysonBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(220, 10)
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
+[node name="Middle" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="LeftPanel" type="PanelContainer" parent="Layout/Middle"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+size_flags_vertical = 3
+
+[node name="LeftVBox" type="VBoxContainer" parent="Layout/Middle/LeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="LeftTitle" type="Label" parent="Layout/Middle/LeftPanel/LeftVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.306, 0.804, 0.769, 1)
+text = "◈  资源"
+
+[node name="ResourceList" type="VBoxContainer" parent="Layout/Middle/LeftPanel/LeftVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 3
+
+[node name="RightPanel" type="PanelContainer" parent="Layout/Middle"]
+layout_mode = 2
+custom_minimum_size = Vector2(240, 0)
+size_flags_vertical = 3
+
+[node name="RightVBox" type="VBoxContainer" parent="Layout/Middle/RightPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="RightTitle" type="Label" parent="Layout/Middle/RightPanel/RightVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.306, 0.804, 0.769, 1)
+text = "🎯  目标"
+
+[node name="ObjectiveList" type="VBoxContainer" parent="Layout/Middle/RightPanel/RightVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="Viewport" type="PanelContainer" parent="Layout/Middle"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ViewportBox" type="VBoxContainer" parent="Layout/Middle/Viewport"]
+layout_mode = 2
+
+[node name="ViewportTitle" type="Label" parent="Layout/Middle/Viewport/ViewportBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.545, 0.58, 0.62, 1)
+text = "  [游戏视口 · 占位]"
+horizontal_alignment = 1
+
+[node name="GridArea" type="ColorRect" parent="Layout/Middle/Viewport/ViewportBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+size_flags_vertical = 3
+color = Color(0.086, 0.106, 0.133, 1)
+
+[node name="HintLabel" type="Label" parent="Layout/Middle/Viewport/ViewportBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.545, 0.58, 0.62, 1)
+text = "  游戏世界渲染区域 · MVP 中会接入 TileMap / Node2D 世界场景"
+horizontal_alignment = 1
+
+[node name="BottomBar" type="PanelContainer" parent="Layout"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+size_flags_horizontal = 3
+
+[node name="BottomHBox" type="HBoxContainer" parent="Layout/BottomBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CategoryBox" type="HBoxContainer" parent="Layout/BottomBar/BottomHBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="BtnMining" type="Button" parent="Layout/BottomBar/BottomHBox/CategoryBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 40)
+text = "⛏ 采矿"
+
+[node name="BtnProcessing" type="Button" parent="Layout/BottomBar/BottomHBox/CategoryBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 40)
+text = "🔥 加工"
+
+[node name="BtnLogistics" type="Button" parent="Layout/BottomBar/BottomHBox/CategoryBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 40)
+text = "🚚 物流"
+
+[node name="BtnTech" type="Button" parent="Layout/BottomBar/BottomHBox/CategoryBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 40)
+text = "🔬 科技"
+
+[node name="BtnMarket" type="Button" parent="Layout/BottomBar/BottomHBox/CategoryBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 40)
+text = "💰 市场"
+
+[node name="BtnSettings" type="Button" parent="Layout/BottomBar/BottomHBox/CategoryBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 40)
+text = "⚙ 设置"
+
+[node name="BackToMenu" type="Button" parent="Layout/BottomBar/BottomHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(90, 40)
+text = "🏠 菜单"
+
+[node name="ExpandMid" type="Control" parent="Layout/BottomBar/BottomHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpeedBox" type="HBoxContainer" parent="Layout/BottomBar/BottomHBox"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="BtnPause" type="Button" parent="Layout/BottomBar/BottomHBox/SpeedBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(44, 40)
+text = "⏸"
+
+[node name="Btn1x" type="Button" parent="Layout/BottomBar/BottomHBox/SpeedBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(44, 40)
+text = "1×"
+
+[node name="Btn2x" type="Button" parent="Layout/BottomBar/BottomHBox/SpeedBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(44, 40)
+text = "2×"
+
+[node name="Btn4x" type="Button" parent="Layout/BottomBar/BottomHBox/SpeedBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(44, 40)
+text = "4×"
+
+[node name="Btn16x" type="Button" parent="Layout/BottomBar/BottomHBox/SpeedBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(44, 40)
+text = "16×"
+
+[node name="SpeedLabel" type="Label" parent="Layout/BottomBar/BottomHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.545, 0.58, 0.62, 1)
+text = " 速度: 1×"

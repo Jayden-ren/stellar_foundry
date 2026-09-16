@@ -1,0 +1,190 @@
+{
+  "categories": [
+    {
+      "id": "mining",
+      "label": "⛏ 采矿"
+    },
+    {
+      "id": "processing",
+      "label": "🔥 加工"
+    },
+    {
+      "id": "logistics",
+      "label": "🚚 物流"
+    },
+    {
+      "id": "storage",
+      "label": "📦 存储"
+    },
+    {
+      "id": "infra",
+      "label": "🔌 设施"
+    },
+    {
+      "id": "trade",
+      "label": "💰 贸易"
+    }
+  ],
+  "resources": [
+    {
+      "id": "iron_ore",
+      "display_name": "铁矿",
+      "color": [0.78, 0.78, 0.8, 1.0],
+      "spawn_count": 25,
+      "price": 5,
+      "mine_interval": 5.0,
+      "yield_per_tick": 1.0,
+      "smelt_output": "steel",
+      "smelt_interval": 3.0,
+      "enabled": true
+    },
+    {
+      "id": "copper_ore",
+      "display_name": "铜矿",
+      "color": [0.85, 0.55, 0.32, 1.0],
+      "spawn_count": 25,
+      "price": 8,
+      "mine_interval": 5.0,
+      "yield_per_tick": 1.0,
+      "smelt_output": "copper",
+      "smelt_interval": 3.0,
+      "enabled": true
+    },
+    {
+      "id": "coal",
+      "display_name": "煤炭",
+      "color": [0.28, 0.25, 0.25, 1.0],
+      "spawn_count": 24,
+      "price": 3,
+      "mine_interval": 5.0,
+      "yield_per_tick": 1.0,
+      "smelt_output": "",
+      "smelt_interval": 3.0,
+      "enabled": true
+    },
+    {
+      "id": "steel",
+      "display_name": "钢铁",
+      "color": [0.7, 0.72, 0.76, 1.0],
+      "spawn_count": 0,
+      "price": 20,
+      "mine_interval": 0.0,
+      "yield_per_tick": 0.0,
+      "smelt_output": "",
+      "smelt_interval": 0.0,
+      "enabled": true
+    },
+    {
+      "id": "copper",
+      "display_name": "铜锭",
+      "color": [0.85, 0.55, 0.32, 1.0],
+      "spawn_count": 0,
+      "price": 30,
+      "mine_interval": 0.0,
+      "yield_per_tick": 0.0,
+      "smelt_output": "",
+      "smelt_interval": 0.0,
+      "enabled": true
+    }
+  ],
+  "buildings": [
+    {
+      "id": "mining_drill",
+      "category": "mining",
+      "icon": "⛏",
+      "display_name": "采矿钻",
+      "cost": 100,
+      "color": [0.6, 0.6, 0.62, 1.0],
+      "size": 2,
+      "cycle_interval": 5.0,
+      "desc": "2×2，靠近矿点产出原始资源",
+      "req_tech": "basic_mining",
+      "enabled": true
+    },
+    {
+      "id": "smelter",
+      "category": "processing",
+      "icon": "🔥",
+      "display_name": "熔炉",
+      "cost": 250,
+      "color": [0.8, 0.35, 0.25, 1.0],
+      "size": 1,
+      "cycle_interval": 3.0,
+      "desc": "铁矿→钢铁，铜矿→铜锭",
+      "req_tech": "smelting",
+      "enabled": true
+    },
+    {
+      "id": "conveyor",
+      "category": "logistics",
+      "icon": "🎞",
+      "display_name": "传送带",
+      "cost": 20,
+      "color": [0.3, 0.8, 0.77, 1.0],
+      "size": 1,
+      "cycle_interval": 0.0,
+      "desc": "基础物流，可按方向放置",
+      "req_tech": "conveyor",
+      "enabled": true
+    },
+    {
+      "id": "storage",
+      "category": "storage",
+      "icon": "📦",
+      "display_name": "仓库",
+      "cost": 150,
+      "color": [0.55, 0.55, 0.58, 1.0],
+      "size": 1,
+      "cycle_interval": 0.0,
+      "desc": "基础存储节点",
+      "req_tech": "storage",
+      "enabled": true
+    },
+    {
+      "id": "trading_post",
+      "category": "trade",
+      "icon": "🏪",
+      "display_name": "交易站",
+      "cost": 300,
+      "color": [0.4, 0.65, 0.9, 1.0],
+      "size": 1,
+      "cycle_interval": 2.0,
+      "desc": "自动出售当前库存资源",
+      "req_tech": "trade",
+      "enabled": true
+    },
+    {
+      "id": "solar_panel",
+      "category": "infra",
+      "icon": "☀",
+      "display_name": "太阳能板",
+      "cost": 80,
+      "color": [0.2, 0.5, 0.9, 1.0],
+      "size": 1,
+      "cycle_interval": 1.0,
+      "desc": "电力供应",
+      "req_tech": "power_grid",
+      "enabled": false
+    },
+    {
+      "id": "battery",
+      "category": "infra",
+      "icon": "🔋",
+      "display_name": "电池组",
+      "cost": 120,
+      "color": [0.3, 0.65, 0.35, 1.0],
+      "size": 1,
+      "cycle_interval": 0.0,
+      "desc": "储能",
+      "req_tech": "power_grid",
+      "enabled": false
+    }
+  ],
+  "game_world_order": [
+    "mining_drill",
+    "smelter",
+    "conveyor",
+    "storage",
+    "trading_post"
+  ]
+}

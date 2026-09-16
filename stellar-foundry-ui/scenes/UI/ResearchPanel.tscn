@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/UI/ResearchPanel.gd" id="1_script"]
+
+[node name="ResearchPanel" type="Control"]
+script = ExtResource("1_script")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -280.0
+offset_right = 320.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="PanelContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933, 0.835, 0.18, 1)
+theme_override_font_sizes/font_size = 22
+text = "🔬 研 究 所"
+
+[node name="DescLabel" type="Label" parent="PanelContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 2
+text = "研究科技解锁新建筑和功能\n点击按钮查看描述，花费金钱研究"
+
+[node name="TechGrid" type="GridContainer" parent="PanelContainer/VBox"]
+layout_mode = 2
+columns = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="CloseBtn" type="Button" parent="PanelContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 36)
+text = "关闭 (ESC)"
