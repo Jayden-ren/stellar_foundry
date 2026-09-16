@@ -2,7 +2,7 @@
 
 ## Quick start
 1. Clone this repository.
-2. Open Godot 4.7 and import `stellar-foundry-ui/project.godot`.
+2. Open Godot 4.7 and import `project.godot`.
 3. Run the project with F5.
 
 ## Remote repository
